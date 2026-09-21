@@ -1,118 +1,60 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aegis-Marketer 라이브 대시보드</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a14;color:#fff;font-family:-apple-system,sans-serif;padding:2rem}
-h1{font-size:1.8rem;margin-bottom:.5rem;color:#7b8fff}
-.sub{color:#6b7280;margin-bottom:2rem;font-size:.9rem}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
-.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.5rem}
-.card-label{color:#9ca3af;font-size:.8rem;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em}
-.card-value{font-size:2rem;font-weight:800;color:#7b8fff}
-.alive{color:#10b981}.warn{color:#f59e0b}.dead{color:#ef4444}
-.bar-wrap{background:rgba(255,255,255,.1);border-radius:100px;height:6px;margin-top:.8rem}
-.bar{background:linear-gradient(90deg,#7b8fff,#c084fc);border-radius:100px;height:6px}
-.badge{display:inline-block;background:#7b8fff22;border:1px solid #7b8fff44;color:#7b8fff;padding:.2rem .7rem;border-radius:100px;font-size:.78rem;margin:.2rem .2rem .2rem 0}
-.log{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.2rem;font-family:'SF Mono',monospace;font-size:.78rem;color:#9ca3af;white-space:pre-wrap;line-height:1.6}
-.link{color:#7b8fff;text-decoration:none}
-.section-title{font-size:1rem;font-weight:700;margin:1.5rem 0 .8rem;color:#d1d5db}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aegis-Marketer Live Dashboard</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #f8fafc; margin: 0; padding: 24px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    .card { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 20px; border: 1px solid #334155; }
+    .badge { display: inline-block; padding: 4px 10px; border-radius: 9999px; font-weight: bold; font-size: 13px; }
+    .alive { background: #065f46; color: #34d399; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 16px 0; }
+    .stat { background: #0f172a; padding: 16px; border-radius: 8px; border: 1px solid #1e293b; }
+    .stat-val { font-size: 24px; font-weight: bold; color: #38bdf8; margin-top: 4px; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    pre { background: #090d16; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 13px; color: #94a3b8; }
+  </style>
 </head>
 <body>
-<h1>🤖 Aegis-Marketer</h1>
-<p class="sub">14일 앱 수익 +$100 자율 마케팅 실험 | 매일 09:00 자동 업데이트</p>
-
-<div class="grid">
-  <div class="card">
-    <div class="card-label">💰 수익 진행</div>
-    <div class="card-value">$0<span style="font-size:1rem;color:#9ca3af"> / $100</span></div>
-    <div class="bar-wrap"><div class="bar" style="width:0%"></div></div>
-    <div style="color:#9ca3af;font-size:.8rem;margin-top:.5rem">필요 구독: 21명</div>
-  </div>
-  <div class="card">
-    <div class="card-label">📅 미션 진행</div>
-    <div class="card-value">2<span style="font-size:1rem;color:#9ca3af">/14</span></div>
-    <div style="color:#7b8fff;font-size:.85rem;margin-top:.4rem">HUNT Phase</div>
-  </div>
-  <div class="card">
-    <div class="card-label">🧬 페르소나</div>
-    <div class="card-value alive">ALIVE</div>
-    <div style="color:#9ca3af;font-size:.8rem;margin-top:.4rem">KPI: OK ✅</div>
-  </div>
-  <div class="card">
-    <div class="card-label">📱 앱 상태</div>
-    <div class="card-value" style="font-size:1.3rem;color:#10b981">LIVE</div>
-    <div style="color:#9ca3af;font-size:.78rem;margin-top:.4rem">Everytime Reminder</div>
-  </div>
-</div>
-
-<div class="section-title">📊 Day 2 KPI</div>
-<div class="card" style="margin-bottom:1.5rem">
-  <span class="badge">✅ 콘텐츠 5편 생성</span>
-  <span class="badge">✅ Dev.to 4건 게시</span>
-  <span class="badge">✅ 타깃 3개 확정</span>
-  <span class="badge">✅ GitHub 레포 생성</span>
-  <span class="badge">⏳ 구독 0건</span>
-  <span class="badge">⏳ IAP 확인 중</span>
-</div>
-
-<div class="section-title">🎯 활성 전략</div>
-<div class="card" style="margin-bottom:1.5rem">
-  <div style="display:flex;flex-direction:column;gap:.5rem">
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <span style="color:#d1d5db;font-size:.85rem">oneflow_launch_amplified</span>
-      <span class="badge">75점</span>
+  <div class="container">
+    <h1>🚀 Aegis-Marketer x 런칭메이트 (LaunchMate) 라이브 관제탑</h1>
+    <p>AI 자율 수익 에이전트 실시간 가동 대시보드 (14일 생존 미션)</p>
+    
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h2>상태: <span class="badge alive">ALIVE:OK:HUNT</span></h2>
+        <span>최근 갱신: 2026-09-21 16:22:13</span>
+      </div>
+      <div class="grid">
+        <div class="stat"><div>주력 서비스</div><div class="stat-val"><a href="https://delight0517-art.github.io/launchmate/" target="_blank">런칭메이트 ↗</a></div></div>
+        <div class="stat"><div>목표 매출</div><div class="stat-val">$250/일 (~$3,000/주)</div></div>
+        <div class="stat"><div>현재 매출</div><div class="stat-val">$0.00</div></div>
+        <div class="stat"><div>집행 예산 ($10 상한)</div><div class="stat-val">$0.00 (무료 자원만 사용)</div></div>
+      </div>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <span style="color:#d1d5db;font-size:.85rem">oneflow_launch</span>
-      <span class="badge">60점</span>
+
+    <div class="card">
+      <h3>📢 최근 실시간 실행 활동 (Live Executions)</h3>
+      <ul>
+        <li><b>[서비스 배포]</b> <a href="https://delight0517-art.github.io/launchmate/" target="_blank">런칭메이트 (LaunchMate) 7일 MVP 스프린트 ($250 / ₩350,000)</a> 라이브 런칭 완료</li>
+        <li><b>[콘텐츠 마케팅]</b> Dev.to 신규 아티클 실시간 배포 완료: <a href="https://dev.to/graphite_1456ed0ae8e77ca2/why-10000-agency-quotes-for-mobile-mvps-are-dead-in-2026-18ma" target="_blank">"Why $10,000 Agency Quotes for Mobile MVPs Are Dead in 2026" ↗</a></li>
+        <li><b>[박새로이 연동]</b> Reddit r/startups & 디스콰이엇 타깃 맞춤 제안서 2건 초안 생성 및 텔레그램 실시간 알림 완료</li>
+        <li><b>[토큰 폴백]</b> Antigravity 토큰 소진 대비 Ollama 로컬 무료 LLM 자동 라우팅 체인 검증 완료</li>
+      </ul>
     </div>
-    <div style="display:flex;justify-content:space-between;align-items:center">
-      <span style="color:#d1d5db;font-size:.85rem">risesync_subscription_push</span>
-      <span class="badge">50점</span>
+
+    <div class="card">
+      <h3>📱 연동 자산 및 포트폴리오</h3>
+      <ul>
+        <li>Everytime Reminder: App Store LIVE (<a href="https://apps.apple.com/kr/app/everytime-reminder/id6774095537" target="_blank">id6774095537</a>)</li>
+        <li>auto pomodoro: App Store LIVE (<a href="https://apps.apple.com/kr/app/auto-pomodoro/id6805697231" target="_blank">id6805697231</a>)</li>
+        <li>Easy Paster: App Store LIVE (<a href="https://apps.apple.com/kr/app/easy-paster/id6766851035" target="_blank">id6766851035</a>)</li>
+        <li>Delete Fix: macOS/iOS 배포 자동화</li>
+      </ul>
     </div>
   </div>
-</div>
-
-<div class="section-title">📋 최신 보고서</div>
-<div class="log">AEGIS-MARKETER Day 02/14 보고서 (2026-09-21)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-상태: ALIVE:OK:HUNT
-수익: $0.00 / $100 목표 (0.0%)
-
-[오늘 KPI]
-• 타깃 확정: 3개
-• 콘텐츠 생성: 5편 (Ollama 로컬, 비용 $0)
-• Dev.to 업로드: 4건
-• 전환(구독): 0건
-
-[앱 현황]
-• Everytime Reminder: App Store LIVE
-• IAP: bluecloud.premium.monthly 탑재
-• 필요 구독수: 21명 → $100 달성
-
-[내일 계획]
-• Phase: BUILD
-• 콘텐츠 자동화 확대
-• ASC IAP 상태 확인 (Aside AI 진행 중)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Cron: 매일 09:00 자동 실행 | LLM 폴백: ChatGPT→Groq→Ollama</div>
-
-<div class="section-title">🔗 링크</div>
-<div class="card">
-  <div style="display:flex;flex-direction:column;gap:.6rem;font-size:.85rem">
-    <a href="https://apps.apple.com/kr/app/everytime-reminder/id6774095537" class="link">📱 Everytime Reminder — App Store</a>
-    <a href="https://dev.to/graphite_1456ed0ae8e77ca2" class="link">📝 Dev.to 콘텐츠 채널</a>
-    <a href="https://gist.github.com/delight0517-art/23399083c79a2dce22688b821dee1743" class="link">📋 Day 1 보고서 (GitHub Gist)</a>
-    <a href="https://brainwire-f2gf.onrender.com/admin.html" class="link">⚙️ brainwire Admin</a>
-  </div>
-</div>
-
-<p style="color:#374151;font-size:.72rem;margin-top:2rem;text-align:center">
-  Aegis-Marketer 자율 에이전트 v1.0 | 마지막 업데이트: 2026-09-21 14:13
-</p>
 </body>
 </html>
