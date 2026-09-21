@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aegis-Marketer 라이브 대시보드</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0a0a14;color:#fff;font-family:-apple-system,sans-serif;padding:2rem}
+h1{font-size:1.8rem;margin-bottom:.5rem;color:#7b8fff}
+.sub{color:#6b7280;margin-bottom:2rem;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-bottom:2rem}
+.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.5rem}
+.card-label{color:#9ca3af;font-size:.8rem;margin-bottom:.5rem;text-transform:uppercase;letter-spacing:.05em}
+.card-value{font-size:2rem;font-weight:800;color:#7b8fff}
+.alive{color:#10b981}.warn{color:#f59e0b}.dead{color:#ef4444}
+.bar-wrap{background:rgba(255,255,255,.1);border-radius:100px;height:6px;margin-top:.8rem}
+.bar{background:linear-gradient(90deg,#7b8fff,#c084fc);border-radius:100px;height:6px}
+.badge{display:inline-block;background:#7b8fff22;border:1px solid #7b8fff44;color:#7b8fff;padding:.2rem .7rem;border-radius:100px;font-size:.78rem;margin:.2rem .2rem .2rem 0}
+.log{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.2rem;font-family:'SF Mono',monospace;font-size:.78rem;color:#9ca3af;white-space:pre-wrap;line-height:1.6}
+.link{color:#7b8fff;text-decoration:none}
+.section-title{font-size:1rem;font-weight:700;margin:1.5rem 0 .8rem;color:#d1d5db}
+</style>
+</head>
+<body>
+<h1>🤖 Aegis-Marketer</h1>
+<p class="sub">14일 앱 수익 +$100 자율 마케팅 실험 | 매일 09:00 자동 업데이트</p>
+
+<div class="grid">
+  <div class="card">
+    <div class="card-label">💰 수익 진행</div>
+    <div class="card-value">$0<span style="font-size:1rem;color:#9ca3af"> / $100</span></div>
+    <div class="bar-wrap"><div class="bar" style="width:0%"></div></div>
+    <div style="color:#9ca3af;font-size:.8rem;margin-top:.5rem">필요 구독: 21명</div>
+  </div>
+  <div class="card">
+    <div class="card-label">📅 미션 진행</div>
+    <div class="card-value">2<span style="font-size:1rem;color:#9ca3af">/14</span></div>
+    <div style="color:#7b8fff;font-size:.85rem;margin-top:.4rem">HUNT Phase</div>
+  </div>
+  <div class="card">
+    <div class="card-label">🧬 페르소나</div>
+    <div class="card-value alive">ALIVE</div>
+    <div style="color:#9ca3af;font-size:.8rem;margin-top:.4rem">KPI: OK ✅</div>
+  </div>
+  <div class="card">
+    <div class="card-label">📱 앱 상태</div>
+    <div class="card-value" style="font-size:1.3rem;color:#10b981">LIVE</div>
+    <div style="color:#9ca3af;font-size:.78rem;margin-top:.4rem">Everytime Reminder</div>
+  </div>
+</div>
+
+<div class="section-title">📊 Day 2 KPI</div>
+<div class="card" style="margin-bottom:1.5rem">
+  <span class="badge">✅ 콘텐츠 5편 생성</span>
+  <span class="badge">✅ Dev.to 4건 게시</span>
+  <span class="badge">✅ 타깃 3개 확정</span>
+  <span class="badge">✅ GitHub 레포 생성</span>
+  <span class="badge">⏳ 구독 0건</span>
+  <span class="badge">⏳ IAP 확인 중</span>
+</div>
+
+<div class="section-title">🎯 활성 전략</div>
+<div class="card" style="margin-bottom:1.5rem">
+  <div style="display:flex;flex-direction:column;gap:.5rem">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="color:#d1d5db;font-size:.85rem">oneflow_launch_amplified</span>
+      <span class="badge">75점</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="color:#d1d5db;font-size:.85rem">oneflow_launch</span>
+      <span class="badge">60점</span>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center">
+      <span style="color:#d1d5db;font-size:.85rem">risesync_subscription_push</span>
+      <span class="badge">50점</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">📋 최신 보고서</div>
+<div class="log">AEGIS-MARKETER Day 02/14 보고서 (2026-09-21)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+상태: ALIVE:OK:HUNT
+수익: $0.00 / $100 목표 (0.0%)
+
+[오늘 KPI]
+• 타깃 확정: 3개
+• 콘텐츠 생성: 5편 (Ollama 로컬, 비용 $0)
+• Dev.to 업로드: 4건
+• 전환(구독): 0건
+
+[앱 현황]
+• Everytime Reminder: App Store LIVE
+• IAP: bluecloud.premium.monthly 탑재
+• 필요 구독수: 21명 → $100 달성
+
+[내일 계획]
+• Phase: BUILD
+• 콘텐츠 자동화 확대
+• ASC IAP 상태 확인 (Aside AI 진행 중)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Cron: 매일 09:00 자동 실행 | LLM 폴백: ChatGPT→Groq→Ollama</div>
+
+<div class="section-title">🔗 링크</div>
+<div class="card">
+  <div style="display:flex;flex-direction:column;gap:.6rem;font-size:.85rem">
+    <a href="https://apps.apple.com/kr/app/everytime-reminder/id6774095537" class="link">📱 Everytime Reminder — App Store</a>
+    <a href="https://dev.to/graphite_1456ed0ae8e77ca2" class="link">📝 Dev.to 콘텐츠 채널</a>
+    <a href="https://gist.github.com/delight0517-art/23399083c79a2dce22688b821dee1743" class="link">📋 Day 1 보고서 (GitHub Gist)</a>
+    <a href="https://brainwire-f2gf.onrender.com/admin.html" class="link">⚙️ brainwire Admin</a>
+  </div>
+</div>
+
+<p style="color:#374151;font-size:.72rem;margin-top:2rem;text-align:center">
+  Aegis-Marketer 자율 에이전트 v1.0 | 마지막 업데이트: 2026-09-21 14:13
+</p>
+</body>
+</html>
